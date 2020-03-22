@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flip 3d card</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        .wrap{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgb(182, 246, 246);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            width: 300px;
+            height: 400px;
+            position: relative;
+            cursor: pointer;
+            perspective:1000px;
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: 2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            border-radius: 20px;
+        }
+        .front{
+            background: rgb(252, 252, 63);
+            color: rgb(7, 7, 114);
+        }
+        .back{
+            background: rgb(3, 6, 170);
+            color: rgb(167, 250, 146);
+            transform: rotateY(180deg);
+        }
+        .turned_back {
+            transform: rotateY(360deg);
+        }
+        .turned_front {
+            transform: rotateY(180deg);
+        }  
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <div class="front"><span>front</span></div>
+            <div class="back"><span>back</span></div>
+        </div>
+    </div>
+    <script>
+        let card = document.querySelector(".card");
+        let back = document.querySelector(".back");
+        let front = document.querySelector(".front");
+        card.addEventListener("click", turning);
+        function turning(){
+            back.classList.toggle("turned_back");
+            front.classList.toggle("turned_front");
+        }
+    </script>
+</body>
+</html>

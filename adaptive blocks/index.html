@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive blocks</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="buttons">
+        <div class="hide"><span>hide</span></div>
+        <div class="show"><span>show</span></div>
+    </div>
+    <div class="wrap">
+        <div class="desktop elem"></div>
+        <div class="tablet elem"></div>
+        <div class="phone elem"></div>        
+    </div>
+    <script>
+        var hide = document.querySelector(".hide"),
+            show = document.querySelector(".show");
+        var elems = document.querySelectorAll(".elem");
+            hide.addEventListener("click", hidding);
+            function hidding(){
+                for(i=0;i<elems.length;i++){
+                    elems[i].classList.toggle("active", true);
+                }
+            }
+            show.addEventListener("click", showing);
+            function showing(){
+                for(i=0;i<elems.length;i++){
+                    elems[i].classList.toggle("active", false);
+                }
+            }
+    </script>
+</body>
+</html>
