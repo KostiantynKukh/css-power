@@ -18,7 +18,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    transition: 2s;
+    transition: 0.5s;
     transform: rotateX(50deg) rotateY(35deg) rotateZ(-25deg);
     transform-style: preserve-3d;
 }
@@ -33,4 +33,15 @@
 }
 .card img {
     max-width: 100%;
+}
+.wrap_active {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    width: 80%;
+    justify-content: center;
+}
+.card_rm {
+    display: none;
+}
+.card_active {
+    display: block;
 }
